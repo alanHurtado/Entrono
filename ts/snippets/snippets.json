@@ -1,0 +1,31 @@
+{
+    "React custom Index": {
+        "prefix": "reactindexRedux",
+        "body": [
+            "export { uiReduccer } from './${2:name}Reduccer';",
+            "export { UIProvider } from './${1:Name}Provider';",
+            "export { UIContext } from './${1:Name}Context';"
+        ],
+        "description": "Log output to console"
+    },
+    "React custom Reduccer": {
+        "prefix": "reactreduccer",
+        "body": [
+            "import { ${1:Name}State } from './';",
+            "type ${6}${1:Name}ActionType = |{ type: '${1:Name}-${2:ActionName}' } ",
+            "",
+            "export const uiReduccer = (state: ${1:Name}State, action: ${1:Name}ActionType): ${1:Name}State => {",
+            "  switch (action.type) {",
+            "    case '${1:Name}-${2:ActionName}':",
+            "      return {",
+            "        ...state,",
+            "        ${4:state}: ${5:value}",
+            "      };",
+            "    default:",
+            "      return state;",
+            "  }",
+            "};"
+        ],
+        "description": "Log output to console"
+    }
+}

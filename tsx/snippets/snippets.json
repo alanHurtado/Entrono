@@ -1,0 +1,55 @@
+{
+  "React custom context": {
+    "prefix": "reactcontext",
+    "body": [
+      "import { createContext } from 'react';",
+      "export interface ContextProps {",
+      "  ${2:prop}: ${3:boolean};",
+      "}",
+      "",
+      "export const ${1:Name}Context = createContext({} as ContextProps);"
+    ],
+    "description": "Log output to console"
+  },
+  "React custom provider": {
+    "prefix": "reactprovider",
+    "body": [
+      "import { FC, ReactNode, useReducer } from 'react';",
+      "import { ${1:Name}Reduccer, ${1:Name}Context } from './';",
+      "",
+      "export interface ${1:Name}State {",
+      "  ${2:property}: boolean;",
+      "}",
+      "interface Props {",
+      "  children: ReactNode;",
+      "}",
+      "const ${1:Name}_INITIAL_STATE: ${1:Name}State = {",
+      "  ${2:property}: false,",
+      "};",
+      "",
+      "export const ${1:Name}Provider: FC<Props> = ({ children }) => {",
+      "  const [state, dispatch] = useReducer(${1:Name}Reduccer, ${1:Name}_INITIAL_STATE);",
+      "  return (",
+      "    <${1:Name}Context.Provider",
+      "      value={{",
+      "        ${2:property}: false,",
+      "      }}",
+      "    >",
+      "      {children}",
+      "    </${1:Name}Context.Provider>",
+      "  );",
+      "};"
+    ],
+    "description": "Log output to console"
+  },
+  "Next Link": {
+    "prefix": "NexLink",
+    "body": [
+      "import NextLink from 'next/link';",
+      "    <NextLink href='${2:href}' passHref>",
+      "      <Link typography='h4' color='secondary'> ${1:Name} </Link>",
+      "    </NextLink>"
+    ],
+    "description": "Link con next y mui"
+  }
+}
